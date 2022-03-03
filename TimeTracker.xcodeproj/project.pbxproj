@@ -11,9 +11,6 @@
 		11777C0B27CFCB3E00D33474 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C0A27CFCB3E00D33474 /* ContentView.swift */; };
 		11777C0D27CFCB3F00D33474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11777C0C27CFCB3F00D33474 /* Assets.xcassets */; };
 		11777C1027CFCB3F00D33474 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11777C0F27CFCB3F00D33474 /* Preview Assets.xcassets */; };
-		11777C1A27CFCB4000D33474 /* TimeTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C1927CFCB4000D33474 /* TimeTrackerTests.swift */; };
-		11777C2427CFCB4000D33474 /* TimeTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C2327CFCB4000D33474 /* TimeTrackerUITests.swift */; };
-		11777C2627CFCB4000D33474 /* TimeTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C2527CFCB4000D33474 /* TimeTrackerUITestsLaunchTests.swift */; };
 		11777C3527D011C800D33474 /* TimeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C3427D011C800D33474 /* TimeEntry.swift */; };
 		11777C3727D0122F00D33474 /* TimeEntryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C3627D0122F00D33474 /* TimeEntryRepository.swift */; };
 		11777C3A27D012C900D33474 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11777C3827D012C900D33474 /* Model.xcdatamodeld */; };
@@ -22,13 +19,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		11777C1627CFCB4000D33474 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 11777BFD27CFCB3E00D33474 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 11777C0427CFCB3E00D33474;
-			remoteInfo = TimeTracker;
-		};
-		11777C2027CFCB4000D33474 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 11777BFD27CFCB3E00D33474 /* Project object */;
 			proxyType = 1;
@@ -44,10 +34,6 @@
 		11777C0C27CFCB3F00D33474 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11777C0F27CFCB3F00D33474 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		11777C1527CFCB4000D33474 /* TimeTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		11777C1927CFCB4000D33474 /* TimeTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerTests.swift; sourceTree = "<group>"; };
-		11777C1F27CFCB4000D33474 /* TimeTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		11777C2327CFCB4000D33474 /* TimeTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerUITests.swift; sourceTree = "<group>"; };
-		11777C2527CFCB4000D33474 /* TimeTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		11777C3427D011C800D33474 /* TimeEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntry.swift; sourceTree = "<group>"; };
 		11777C3627D0122F00D33474 /* TimeEntryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryRepository.swift; sourceTree = "<group>"; };
 		11777C3927D012C900D33474 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -69,13 +55,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		11777C1C27CFCB4000D33474 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,7 +63,6 @@
 			children = (
 				11777C0727CFCB3E00D33474 /* TimeTracker */,
 				11777C1827CFCB4000D33474 /* TimeTrackerTests */,
-				11777C2227CFCB4000D33474 /* TimeTrackerUITests */,
 				11777C0627CFCB3E00D33474 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,7 +72,6 @@
 			children = (
 				11777C0527CFCB3E00D33474 /* TimeTracker.app */,
 				11777C1527CFCB4000D33474 /* TimeTrackerTests.xctest */,
-				11777C1F27CFCB4000D33474 /* TimeTrackerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,19 +101,9 @@
 		11777C1827CFCB4000D33474 /* TimeTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				11777C1927CFCB4000D33474 /* TimeTrackerTests.swift */,
 				11777C3B27D0A73700D33474 /* TimeEntryRepositoryTests.swift */,
 			);
 			path = TimeTrackerTests;
-			sourceTree = "<group>";
-		};
-		11777C2227CFCB4000D33474 /* TimeTrackerUITests */ = {
-			isa = PBXGroup;
-			children = (
-				11777C2327CFCB4000D33474 /* TimeTrackerUITests.swift */,
-				11777C2527CFCB4000D33474 /* TimeTrackerUITestsLaunchTests.swift */,
-			);
-			path = TimeTrackerUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,24 +144,6 @@
 			productReference = 11777C1527CFCB4000D33474 /* TimeTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		11777C1E27CFCB4000D33474 /* TimeTrackerUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 11777C2F27CFCB4000D33474 /* Build configuration list for PBXNativeTarget "TimeTrackerUITests" */;
-			buildPhases = (
-				11777C1B27CFCB4000D33474 /* Sources */,
-				11777C1C27CFCB4000D33474 /* Frameworks */,
-				11777C1D27CFCB4000D33474 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				11777C2127CFCB4000D33474 /* PBXTargetDependency */,
-			);
-			name = TimeTrackerUITests;
-			productName = TimeTrackerUITests;
-			productReference = 11777C1F27CFCB4000D33474 /* TimeTrackerUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -209,10 +158,6 @@
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					11777C1427CFCB4000D33474 = {
-						CreatedOnToolsVersion = 13.2.1;
-						TestTargetID = 11777C0427CFCB3E00D33474;
-					};
-					11777C1E27CFCB4000D33474 = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 11777C0427CFCB3E00D33474;
 					};
@@ -233,7 +178,6 @@
 			targets = (
 				11777C0427CFCB3E00D33474 /* TimeTracker */,
 				11777C1427CFCB4000D33474 /* TimeTrackerTests */,
-				11777C1E27CFCB4000D33474 /* TimeTrackerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,13 +193,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		11777C1327CFCB4000D33474 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11777C1D27CFCB4000D33474 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -281,17 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11777C1A27CFCB4000D33474 /* TimeTrackerTests.swift in Sources */,
 				11777C3C27D0A73700D33474 /* TimeEntryRepositoryTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		11777C1B27CFCB4000D33474 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				11777C2627CFCB4000D33474 /* TimeTrackerUITestsLaunchTests.swift in Sources */,
-				11777C2427CFCB4000D33474 /* TimeTrackerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,11 +229,6 @@
 			isa = PBXTargetDependency;
 			target = 11777C0427CFCB3E00D33474 /* TimeTracker */;
 			targetProxy = 11777C1627CFCB4000D33474 /* PBXContainerItemProxy */;
-		};
-		11777C2127CFCB4000D33474 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 11777C0427CFCB3E00D33474 /* TimeTracker */;
-			targetProxy = 11777C2027CFCB4000D33474 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -525,42 +447,6 @@
 			};
 			name = Release;
 		};
-		11777C3027CFCB4000D33474 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3NRJ5W5TPS;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mobi.beltyukov.avtonomer.TimeTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TimeTracker;
-			};
-			name = Debug;
-		};
-		11777C3127CFCB4000D33474 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3NRJ5W5TPS;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mobi.beltyukov.avtonomer.TimeTrackerUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TimeTracker;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -587,15 +473,6 @@
 			buildConfigurations = (
 				11777C2D27CFCB4000D33474 /* Debug */,
 				11777C2E27CFCB4000D33474 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		11777C2F27CFCB4000D33474 /* Build configuration list for PBXNativeTarget "TimeTrackerUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				11777C3027CFCB4000D33474 /* Debug */,
-				11777C3127CFCB4000D33474 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
