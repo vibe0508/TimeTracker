@@ -14,6 +14,10 @@
 		11777C1A27CFCB4000D33474 /* TimeTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C1927CFCB4000D33474 /* TimeTrackerTests.swift */; };
 		11777C2427CFCB4000D33474 /* TimeTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C2327CFCB4000D33474 /* TimeTrackerUITests.swift */; };
 		11777C2627CFCB4000D33474 /* TimeTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C2527CFCB4000D33474 /* TimeTrackerUITestsLaunchTests.swift */; };
+		11777C3527D011C800D33474 /* TimeEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C3427D011C800D33474 /* TimeEntry.swift */; };
+		11777C3727D0122F00D33474 /* TimeEntryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C3627D0122F00D33474 /* TimeEntryRepository.swift */; };
+		11777C3A27D012C900D33474 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11777C3827D012C900D33474 /* Model.xcdatamodeld */; };
+		11777C3C27D0A73700D33474 /* TimeEntryRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C3B27D0A73700D33474 /* TimeEntryRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		11777C1F27CFCB4000D33474 /* TimeTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		11777C2327CFCB4000D33474 /* TimeTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerUITests.swift; sourceTree = "<group>"; };
 		11777C2527CFCB4000D33474 /* TimeTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		11777C3427D011C800D33474 /* TimeEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntry.swift; sourceTree = "<group>"; };
+		11777C3627D0122F00D33474 /* TimeEntryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryRepository.swift; sourceTree = "<group>"; };
+		11777C3927D012C900D33474 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		11777C3B27D0A73700D33474 /* TimeEntryRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,9 @@
 			children = (
 				11777C0827CFCB3E00D33474 /* TimeTrackerApp.swift */,
 				11777C0A27CFCB3E00D33474 /* ContentView.swift */,
+				11777C3427D011C800D33474 /* TimeEntry.swift */,
+				11777C3627D0122F00D33474 /* TimeEntryRepository.swift */,
+				11777C3827D012C900D33474 /* Model.xcdatamodeld */,
 				11777C0C27CFCB3F00D33474 /* Assets.xcassets */,
 				11777C0E27CFCB3F00D33474 /* Preview Content */,
 			);
@@ -114,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				11777C1927CFCB4000D33474 /* TimeTrackerTests.swift */,
+				11777C3B27D0A73700D33474 /* TimeEntryRepositoryTests.swift */,
 			);
 			path = TimeTrackerTests;
 			sourceTree = "<group>";
@@ -258,7 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				11777C0B27CFCB3E00D33474 /* ContentView.swift in Sources */,
+				11777C3727D0122F00D33474 /* TimeEntryRepository.swift in Sources */,
+				11777C3A27D012C900D33474 /* Model.xcdatamodeld in Sources */,
 				11777C0927CFCB3E00D33474 /* TimeTrackerApp.swift in Sources */,
+				11777C3527D011C800D33474 /* TimeEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11777C1A27CFCB4000D33474 /* TimeTrackerTests.swift in Sources */,
+				11777C3C27D0A73700D33474 /* TimeEntryRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +601,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		11777C3827D012C900D33474 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				11777C3927D012C900D33474 /* Model.xcdatamodel */,
+			);
+			currentVersion = 11777C3927D012C900D33474 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 11777BFD27CFCB3E00D33474 /* Project object */;
 }
