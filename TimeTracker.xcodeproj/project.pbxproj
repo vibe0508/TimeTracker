@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1100023B27D0D322002C942E /* TimerStateManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100023A27D0D322002C942E /* TimerStateManagerTests.swift */; };
+		1100023D27D0E7CE002C942E /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100023C27D0E7CE002C942E /* TimeFormatter.swift */; };
+		1100023F27D0EA58002C942E /* TimeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100023E27D0EA58002C942E /* TimeFormatterTests.swift */; };
 		11777C0927CFCB3E00D33474 /* TimeTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C0827CFCB3E00D33474 /* TimeTrackerApp.swift */; };
 		11777C0B27CFCB3E00D33474 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C0A27CFCB3E00D33474 /* ContentView.swift */; };
 		11777C0D27CFCB3F00D33474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11777C0C27CFCB3F00D33474 /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		1100023A27D0D322002C942E /* TimerStateManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerStateManagerTests.swift; sourceTree = "<group>"; };
+		1100023C27D0E7CE002C942E /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
+		1100023E27D0EA58002C942E /* TimeFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatterTests.swift; sourceTree = "<group>"; };
 		11777C0527CFCB3E00D33474 /* TimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11777C0827CFCB3E00D33474 /* TimeTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerApp.swift; sourceTree = "<group>"; };
 		11777C0A27CFCB3E00D33474 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				11777C3D27D0BF3C00D33474 /* TimerStatus.swift */,
 				11777C4127D0C5A400D33474 /* TimerFinishedState.swift */,
 				11777C3F27D0C02B00D33474 /* TimerStateManager.swift */,
+				1100023C27D0E7CE002C942E /* TimeFormatter.swift */,
 				11777C3827D012C900D33474 /* Model.xcdatamodeld */,
 				11777C0C27CFCB3F00D33474 /* Assets.xcassets */,
 				11777C0E27CFCB3F00D33474 /* Preview Content */,
@@ -113,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				11777C3B27D0A73700D33474 /* TimeEntryRepositoryTests.swift */,
+				1100023E27D0EA58002C942E /* TimeFormatterTests.swift */,
 				1100023A27D0D322002C942E /* TimerStateManagerTests.swift */,
 			);
 			path = TimeTrackerTests;
@@ -219,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11777C0B27CFCB3E00D33474 /* ContentView.swift in Sources */,
+				1100023D27D0E7CE002C942E /* TimeFormatter.swift in Sources */,
 				11777C3E27D0BF3D00D33474 /* TimerStatus.swift in Sources */,
 				11777C4027D0C02B00D33474 /* TimerStateManager.swift in Sources */,
 				11777C3727D0122F00D33474 /* TimeEntryRepository.swift in Sources */,
@@ -234,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11777C3C27D0A73700D33474 /* TimeEntryRepositoryTests.swift in Sources */,
+				1100023F27D0EA58002C942E /* TimeFormatterTests.swift in Sources */,
 				1100023B27D0D322002C942E /* TimerStateManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
