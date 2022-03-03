@@ -10,7 +10,7 @@ import CoreData
 @testable import TimeTracker
 
 class TimeEntryRepositoryTests: XCTestCase {
-    lazy var rootManagedObjectContext = NSPersistentContainer(name: "Model").newBackgroundContext()
+    lazy var rootManagedObjectContext = NSPersistentContainer(name: "Model").viewContext
 
     var managedObjectContext: NSManagedObjectContext!
     var repository: TimeEntryRepositoryImpl!
