@@ -70,6 +70,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1100024027D0ED6B002C942E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11777C3427D011C800D33474 /* TimeEntry.swift */,
+				11777C3D27D0BF3C00D33474 /* TimerStatus.swift */,
+				11777C4127D0C5A400D33474 /* TimerFinishedState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1100024127D0ED73002C942E /* Business logic */ = {
+			isa = PBXGroup;
+			children = (
+				11777C3627D0122F00D33474 /* TimeEntryRepository.swift */,
+				11777C3F27D0C02B00D33474 /* TimerStateManager.swift */,
+				1100023C27D0E7CE002C942E /* TimeFormatter.swift */,
+			);
+			path = "Business logic";
+			sourceTree = "<group>";
+		};
 		11777BFC27CFCB3E00D33474 = {
 			isa = PBXGroup;
 			children = (
@@ -93,12 +113,8 @@
 			children = (
 				11777C0827CFCB3E00D33474 /* TimeTrackerApp.swift */,
 				11777C0A27CFCB3E00D33474 /* ContentView.swift */,
-				11777C3427D011C800D33474 /* TimeEntry.swift */,
-				11777C3627D0122F00D33474 /* TimeEntryRepository.swift */,
-				11777C3D27D0BF3C00D33474 /* TimerStatus.swift */,
-				11777C4127D0C5A400D33474 /* TimerFinishedState.swift */,
-				11777C3F27D0C02B00D33474 /* TimerStateManager.swift */,
-				1100023C27D0E7CE002C942E /* TimeFormatter.swift */,
+				1100024027D0ED6B002C942E /* Models */,
+				1100024127D0ED73002C942E /* Business logic */,
 				11777C3827D012C900D33474 /* Model.xcdatamodeld */,
 				11777C0C27CFCB3F00D33474 /* Assets.xcassets */,
 				11777C0E27CFCB3F00D33474 /* Preview Content */,
