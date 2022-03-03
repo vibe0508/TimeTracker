@@ -11,6 +11,8 @@
 		1100023D27D0E7CE002C942E /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100023C27D0E7CE002C942E /* TimeFormatter.swift */; };
 		1100023F27D0EA58002C942E /* TimeFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100023E27D0EA58002C942E /* TimeFormatterTests.swift */; };
 		1100024527D118D6002C942E /* TimerPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100024427D118D6002C942E /* TimerPageView.swift */; };
+		1100024827D153BE002C942E /* TimeEntriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100024727D153BE002C942E /* TimeEntriesListView.swift */; };
+		1100024A27D156F5002C942E /* TimeEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100024927D156F5002C942E /* TimeEntryView.swift */; };
 		11777C0927CFCB3E00D33474 /* TimeTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C0827CFCB3E00D33474 /* TimeTrackerApp.swift */; };
 		11777C0B27CFCB3E00D33474 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C0A27CFCB3E00D33474 /* ContentView.swift */; };
 		11777C0D27CFCB3F00D33474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11777C0C27CFCB3F00D33474 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 		1100023C27D0E7CE002C942E /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		1100023E27D0EA58002C942E /* TimeFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatterTests.swift; sourceTree = "<group>"; };
 		1100024427D118D6002C942E /* TimerPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPageView.swift; sourceTree = "<group>"; };
+		1100024727D153BE002C942E /* TimeEntriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesListView.swift; sourceTree = "<group>"; };
+		1100024927D156F5002C942E /* TimeEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryView.swift; sourceTree = "<group>"; };
 		11777C0527CFCB3E00D33474 /* TimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11777C0827CFCB3E00D33474 /* TimeTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerApp.swift; sourceTree = "<group>"; };
 		11777C0A27CFCB3E00D33474 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +101,8 @@
 			children = (
 				11777C0A27CFCB3E00D33474 /* ContentView.swift */,
 				1100024427D118D6002C942E /* TimerPageView.swift */,
+				1100024727D153BE002C942E /* TimeEntriesListView.swift */,
+				1100024927D156F5002C942E /* TimeEntryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,12 +259,14 @@
 			files = (
 				11777C0B27CFCB3E00D33474 /* ContentView.swift in Sources */,
 				1100023D27D0E7CE002C942E /* TimeFormatter.swift in Sources */,
+				1100024A27D156F5002C942E /* TimeEntryView.swift in Sources */,
 				11777C3E27D0BF3D00D33474 /* TimerStatus.swift in Sources */,
 				1100024527D118D6002C942E /* TimerPageView.swift in Sources */,
 				11777C4027D0C02B00D33474 /* TimerStateManager.swift in Sources */,
 				11777C3727D0122F00D33474 /* TimeEntryRepository.swift in Sources */,
 				11777C3A27D012C900D33474 /* Model.xcdatamodeld in Sources */,
 				11777C0927CFCB3E00D33474 /* TimeTrackerApp.swift in Sources */,
+				1100024827D153BE002C942E /* TimeEntriesListView.swift in Sources */,
 				11777C3527D011C800D33474 /* TimeEntry.swift in Sources */,
 				11777C4227D0C5A400D33474 /* TimerFinishedState.swift in Sources */,
 			);

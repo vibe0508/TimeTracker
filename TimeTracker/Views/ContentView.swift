@@ -14,6 +14,11 @@ struct ContentView: View {
                 .tabItem {
                     Label("Log time", systemImage: "")
                 }
+
+            TimeEntriesListView()
+                .tabItem {
+                    Label("Time list", systemImage: "")
+                }
         }
     }
 }
