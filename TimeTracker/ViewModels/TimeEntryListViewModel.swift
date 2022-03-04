@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class TimeEntryListViewModel {
+final class TimeEntryListViewModel: ObservableObject {
     @Published
     private(set) var entries: [TimeEntriesListView.Entry] = []
 

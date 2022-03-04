@@ -15,7 +15,7 @@ final class TimeEntriesAssembly {
     }
 
     func makeTimeEntriesListView() -> TimeEntriesListView {
-        TimeEntriesListView()
+        TimeEntriesListView(viewModel: makeViewModel())
     }
 
     private func makeViewModel() -> TimeEntryListViewModel {
