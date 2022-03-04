@@ -15,13 +15,16 @@ struct ContentView: View {
         TabView {
             timerPageView
                 .tabItem {
-                    Label("Log time", systemImage: "")
+                    Label("Log time", systemImage: "stopwatch")
                 }
 
-            timeEntriesView
-                .tabItem {
-                    Label("Time list", systemImage: "")
-                }
+            NavigationView {
+                timeEntriesView
+                    .navigationTitle("Time list")
+            }
+            .tabItem {
+                Label("Time list", systemImage: "list.triangle")
+            }
         }
     }
 }
