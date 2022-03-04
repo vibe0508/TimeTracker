@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 final class TimerPageViewModel: ObservableObject {
     @Published
@@ -20,6 +21,16 @@ final class TimerPageViewModel: ObservableObject {
 
     @Published
     private(set) var buttonTitle = ""
+
+    @Published
+    private(set) var comment = ""
+
+    var commentBinding: Binding<String> {
+        Binding(
+            get: { [weak self] in self?.comment ?? "" },
+            set: { [timerStateManager] in timerStateManager.updateComment($0) }
+        )
+    }
 
     private let timeFormatter: TimeFormatter
     private let timerStateManager: TimerStateManager
@@ -112,5 +123,10 @@ final class TimerPageViewModel: ObservableObject {
                 }
             }
             .assign(to: &$buttonTitle)
+
+        timerStateManager
+            .comment
+            .map { $0 ?? "" }
+            .assign(to: &$comment)
     }
 }

@@ -75,6 +75,8 @@ final class TimerStateManagerImpl: TimerStateManager {
     }
 
     private func finish() {
+        finishWorkItem = nil
+        
         guard case let .finished(startDate, endDate) = timerStatusPrivate else {
             assertionFailure()
             return

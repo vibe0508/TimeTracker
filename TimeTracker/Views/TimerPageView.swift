@@ -24,7 +24,7 @@ struct TimerPageView: View {
 
             TextField(
                 "",
-                text: $comment,
+                text: viewModel.commentBinding,
                 prompt: Text("Your comment...")
             )
                 .multilineTextAlignment(.center)
