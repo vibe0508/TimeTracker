@@ -8,23 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    private(set) var timerPageView: TimerPageView
+    private(set) var timeEntriesView: TimeEntriesListView
+
     var body: some View {
         TabView {
-            TimerPageView()
+            timerPageView
                 .tabItem {
                     Label("Log time", systemImage: "")
                 }
 
-            TimeEntriesListView()
+            timeEntriesView
                 .tabItem {
                     Label("Time list", systemImage: "")
                 }
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

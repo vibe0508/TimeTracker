@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct TimeTrackerApp: App {
+    let appAssembly = AppAssembly()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            appAssembly.contentView
         }
     }
 }
