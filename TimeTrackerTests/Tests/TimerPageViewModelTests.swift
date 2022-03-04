@@ -47,6 +47,8 @@ class TimerPageViewModelTests: XCTestCase {
         let startDate = Date()
 
         viewModel.$timerText
+            .dropFirst()
+            .first()
             .filter { !$0.isEmpty }
             .sink(receiveValue: {
                 XCTAssertEqual($0, "MOCK")
@@ -103,8 +105,12 @@ class TimerPageViewModelTests: XCTestCase {
             comment: UUID().uuidString
         )
 
-        viewModel.showCompletedView
-            .sink(receiveValue: showCompletedViewCalled.fulfill)
+        viewModel.$showCompletedView
+            .sink(receiveValue: {
+                if $0 {
+                    showCompletedViewCalled.fulfill()
+                }
+            })
             .store(in: &cancellables)
 
         stateManagerMock.finishedTimersSubject.send(finishedState)

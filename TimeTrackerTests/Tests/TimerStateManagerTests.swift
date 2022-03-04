@@ -22,39 +22,40 @@ class TimerStateManagerTests: XCTestCase {
     @Published
     var finishedState: TimerFinishedState?
 
-    var cancellables: [Cancellable] = []
+    var cancellables: Set<AnyCancellable> = []
 
     override func setUpWithError() throws {
         try super.setUpWithError()
 
         timerManager = TimerStateManagerImpl()
 
-        cancellables.append(
-            timerManager.timerStatus
-                .dropFirst()
-                .sink(receiveValue: { [weak self] in
-                    self?.timerStatus = $0
-                })
-        )
+        timerManager.timerStatus
+            .dropFirst()
+            .sink(receiveValue: { [weak self] in
+                self?.timerStatus = $0
+            })
+            .store(in: &cancellables)
 
-        cancellables.append(
-            timerManager.comment
-                .dropFirst()
-                .sink(receiveValue: { [weak self] in
-                    self?.comment = $0
-                })
-        )
+        timerManager.comment
+            .dropFirst()
+            .sink(receiveValue: { [weak self] in
+                self?.comment = $0
+            })
+            .store(in: &cancellables)
 
-        cancellables.append(
-            timerManager.finishedTimers
-                .sink(receiveValue: { [weak self] in
-                    self?.finishedState = $0
-                })
-        )
+        timerManager.finishedTimers
+            .sink(receiveValue: { [weak self] in
+                self?.finishedState = $0
+            })
+            .store(in: &cancellables)
     }
 
     override func tearDown() {
         super.tearDown()
+
+        finishedState = nil
+        comment = nil
+        timerStatus = nil
 
         cancellables.forEach {
             $0.cancel()
@@ -128,16 +129,15 @@ class TimerStateManagerTests: XCTestCase {
 
         let completionCalled = expectation(description: "Completion called")
 
-        cancellables.append(
-            $finishedState
-                .compactMap { $0 }
-                .sink(receiveValue: {
-                    XCTAssertEqual($0.startDate.timeIntervalSince1970, startDate.timeIntervalSince1970, accuracy: 0.01)
-                    XCTAssertEqual($0.endDate.timeIntervalSince1970, endDate.timeIntervalSince1970, accuracy: 0.01)
-                    XCTAssertEqual($0.comment, comment)
-                    completionCalled.fulfill()
-                })
-        )
+        $finishedState
+            .compactMap { $0 }
+            .sink(receiveValue: {
+                XCTAssertEqual($0.startDate.timeIntervalSince1970, startDate.timeIntervalSince1970, accuracy: 0.01)
+                XCTAssertEqual($0.endDate.timeIntervalSince1970, endDate.timeIntervalSince1970, accuracy: 0.01)
+                XCTAssertEqual($0.comment, comment)
+                completionCalled.fulfill()
+            })
+            .store(in: &cancellables)
 
         wait(for: [completionCalled], timeout: 5.5)
 
@@ -158,20 +158,19 @@ class TimerStateManagerTests: XCTestCase {
         timerManager.updateComment(commentTwo)
 
         let completionCalled = expectation(description: "Completion called")
-        let completionNotCalled = expectation(description: "Completion called")
+        let completionNotCalled = expectation(description: "Completion not called")
         completionNotCalled.isInverted = true
 
-        cancellables.append(
-            $finishedState
-                .compactMap { $0 }
-                .sink(receiveValue: {
-                    XCTAssertEqual($0.comment, commentTwo)
-                    completionNotCalled.fulfill()
-                    completionCalled.fulfill()
-                })
-        )
+        $finishedState
+            .compactMap { $0 }
+            .sink(receiveValue: {
+                XCTAssertEqual($0.comment, commentTwo)
+                completionNotCalled.fulfill()
+                completionCalled.fulfill()
+            })
+            .store(in: &cancellables)
 
-        wait(for: [completionNotCalled], timeout: 5.5)
+        wait(for: [completionNotCalled], timeout: 1.5)
         wait(for: [completionCalled], timeout: 2)
     }
 }
