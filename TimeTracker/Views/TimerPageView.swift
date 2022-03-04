@@ -15,25 +15,37 @@ struct TimerPageView: View {
     var comment: String = ""
 
     var body: some View {
-        VStack {
-            Spacer()
+        ZStack {
+            VStack {
+                Spacer()
 
-            Text(viewModel.timerText)
-                .font(.title.monospacedDigit())
-                .fontWeight(.semibold)
+                Text(viewModel.timerText)
+                    .font(.title.monospacedDigit())
+                    .fontWeight(.semibold)
 
-            TextField(
-                "",
-                text: viewModel.commentBinding,
-                prompt: Text("Your comment...")
-            )
-                .multilineTextAlignment(.center)
+                TextField(
+                    "",
+                    text: viewModel.commentBinding,
+                    prompt: Text("Your comment...")
+                )
+                    .multilineTextAlignment(.center)
 
-            Spacer()
+                Spacer()
 
-            Button(viewModel.buttonTitle, action: viewModel.onButtonTap)
+                Button(viewModel.buttonTitle, action: viewModel.onButtonTap)
 
-            Spacer()
+                Spacer()
+            }
+
+            Color(uiColor: .systemBackground)
+                .opacity(viewModel.showCompletedView ? 1 : 0)
+                .animation(.easeInOut)
+
+            Text("Time saved")
+                .font(.title)
+                .opacity(viewModel.showCompletedView ? 1 : 0)
+                .animation(.easeInOut, value: viewModel.showCompletedView)
+
         }
         .padding()
     }

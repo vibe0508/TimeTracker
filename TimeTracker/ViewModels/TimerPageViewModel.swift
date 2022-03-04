@@ -13,11 +13,8 @@ final class TimerPageViewModel: ObservableObject {
     @Published
     private(set) var timerText = ""
 
-    var showCompletedView: AnyPublisher<(), Never> {
-        timerStateManager.finishedTimers
-            .map { _ in }
-            .eraseToAnyPublisher()
-    }
+    @Published
+    private(set) var showCompletedView = false
 
     @Published
     private(set) var buttonTitle = ""
@@ -128,5 +125,18 @@ final class TimerPageViewModel: ObservableObject {
             .comment
             .map { $0 ?? "" }
             .assign(to: &$comment)
+
+        timerStateManager.finishedTimers
+            .map { _ in
+                Timer
+                    .publish(every: 1, on: .main, in: .default)
+                    .autoconnect()
+                    .prepend(Date())
+                    .zip(Publishers.Sequence(sequence: [true, false]))
+                    .map { _, boolean in boolean }
+            }
+            .switchToLatest()
+            .map { $0 }
+            .assign(to: &$showCompletedView)
     }
 }

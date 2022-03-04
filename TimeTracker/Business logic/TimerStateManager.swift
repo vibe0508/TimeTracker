@@ -70,7 +70,7 @@ final class TimerStateManagerImpl: TimerStateManager {
             self?.finish()
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: finishWorkItem)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: finishWorkItem)
         self.finishWorkItem = finishWorkItem
     }
 
