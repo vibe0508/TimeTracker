@@ -8,28 +8,9 @@
 import Foundation
 import Combine
 
-final class TimerPageViewModel {
-    var timerText: AnyPublisher<String, Never> {
-        timerStateManager.timerStatus
-            .flatMap { status -> AnyPublisher<(Date, Date), Never> in
-                switch status {
-                case .notStarted:
-                    return Just((Date(), Date())).eraseToAnyPublisher()
-                case .inProgress(let startDate):
-                    return Timer
-                        .publish(every: 1, on: .main, in: .default)
-                        .prepend(startDate)
-                        .map { (startDate, $0) }
-                        .eraseToAnyPublisher()
-                case .finished(let startDate, let endDate):
-                    return Just((startDate, endDate)).eraseToAnyPublisher()
-                }
-            }
-            .map { [timeFormatter] (startDate: Date, endDate: Date) in
-                timeFormatter.timeString(startDate: startDate, endDate: endDate)
-            }
-            .eraseToAnyPublisher()
-    }
+final class TimerPageViewModel: ObservableObject {
+    @Published
+    private(set) var timerText = ""
 
     var showCompletedView: AnyPublisher<(), Never> {
         timerStateManager.finishedTimers
@@ -37,22 +18,8 @@ final class TimerPageViewModel {
             .eraseToAnyPublisher()
     }
 
-    var buttonTitle: AnyPublisher<String, Never> {
-        timerStateManager.timerStatus
-            .map {
-                switch $0 {
-                case .notStarted:
-                    return "Start"
-
-                case .inProgress:
-                    return "Stop"
-
-                case .finished:
-                    return ""
-                }
-            }
-            .eraseToAnyPublisher()
-    }
+    @Published
+    private(set) var buttonTitle = ""
 
     private let timeFormatter: TimeFormatter
     private let timerStateManager: TimerStateManager
@@ -108,5 +75,42 @@ final class TimerPageViewModel {
                 }
             }
             .assign(to: &$onButtonStartTimer)
+
+        timerStateManager.timerStatus
+            .map { status -> AnyPublisher<(Date, Date), Never> in
+                switch status {
+                case .notStarted:
+                    return Just((Date(), Date())).eraseToAnyPublisher()
+                case .inProgress(let startDate):
+                    return Timer
+                        .publish(every: 1, on: .main, in: .default)
+                        .autoconnect()
+                        .prepend(startDate)
+                        .map { (startDate, $0) }
+                        .eraseToAnyPublisher()
+                case .finished(let startDate, let endDate):
+                    return Just((startDate, endDate)).eraseToAnyPublisher()
+                }
+            }
+            .switchToLatest()
+            .map { [timeFormatter] (startDate: Date, endDate: Date) in
+                timeFormatter.timeString(startDate: startDate, endDate: endDate)
+            }
+            .assign(to: &$timerText)
+
+        timerStateManager.timerStatus
+            .map {
+                switch $0 {
+                case .notStarted:
+                    return "Start"
+
+                case .inProgress:
+                    return "Stop"
+
+                case .finished:
+                    return ""
+                }
+            }
+            .assign(to: &$buttonTitle)
     }
 }

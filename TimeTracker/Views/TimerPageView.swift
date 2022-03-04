@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TimerPageView: View {
+    @ObservedObject
+    var viewModel: TimerPageViewModel
+
     @State
     var comment: String = ""
 
@@ -15,7 +18,7 @@ struct TimerPageView: View {
         VStack {
             Spacer()
 
-            Text("10:00:00")
+            Text(viewModel.timerText)
                 .font(.title.monospacedDigit())
                 .fontWeight(.semibold)
 
@@ -28,17 +31,10 @@ struct TimerPageView: View {
 
             Spacer()
 
-            Button("Start", action: {})
+            Button(viewModel.buttonTitle, action: viewModel.onButtonTap)
 
             Spacer()
         }
         .padding()
-    }
-}
-
-struct TimerPageView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerPageView()
-.previewInterfaceOrientation(.landscapeLeft)
     }
 }

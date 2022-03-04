@@ -15,7 +15,7 @@ final class TimerPageAssembly {
     }
 
     func makeTimerPageView() -> TimerPageView {
-        TimerPageView()
+        TimerPageView(viewModel: makeViewModel())
     }
 
     private func makeViewModel() -> TimerPageViewModel {

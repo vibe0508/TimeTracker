@@ -17,10 +17,6 @@ class TimerPageViewModelTests: XCTestCase {
 
     var viewModel: TimerPageViewModel!
 
-    @Published
-    var timerStrings: [String] = []
-    var buttonTitle: String?
-
     var cancellables: Set<AnyCancellable> = []
 
     override func setUpWithError() throws {
@@ -35,32 +31,14 @@ class TimerPageViewModelTests: XCTestCase {
             timerStateManager: stateManagerMock,
             timeEntryRepository: repositoryMock
         )
-
-        viewModel
-            .timerText
-            .sink(receiveValue: { [weak self] in
-                self?.timerStrings.append($0)
-            })
-            .store(in: &cancellables)
-
-        viewModel.buttonTitle
-            .sink(receiveValue: { [weak self] in
-                self?.buttonTitle = $0
-            })
-            .store(in: &cancellables)
-    }
-
-    override func tearDown() {
-        cancellables.forEach { $0.cancel() }
-        cancellables = []
     }
 
     func testNotStarted() {
         stateManagerMock.timerStatusSubject.send(.notStarted)
 
-        XCTAssertEqual(timerStrings, ["MOCK"])
+        XCTAssertEqual(viewModel.timerText, "MOCK")
         XCTAssertEqual(timeFormatterMock.receivedStartDate, timeFormatterMock.receivedEndDate)
-        XCTAssertEqual(buttonTitle, "Start")
+        XCTAssertEqual(viewModel.buttonTitle, "Start")
         XCTAssertNil(repositoryMock.savedParams)
     }
 
@@ -68,10 +46,10 @@ class TimerPageViewModelTests: XCTestCase {
         let timerFired = expectation(description: "Timer fired")
         let startDate = Date()
 
-        $timerStrings
+        viewModel.$timerText
             .filter { !$0.isEmpty }
             .sink(receiveValue: {
-                XCTAssertEqual($0, ["MOCK"])
+                XCTAssertEqual($0, "MOCK")
                 timerFired.fulfill()
             })
             .store(in: &cancellables)
@@ -81,7 +59,7 @@ class TimerPageViewModelTests: XCTestCase {
         waitForExpectations(timeout: 0.05) { [self] _ in
             XCTAssertEqual(timeFormatterMock.receivedStartDate, startDate)
             XCTAssertEqual(timeFormatterMock.receivedEndDate, startDate)
-            XCTAssertEqual(buttonTitle, "Stop")
+            XCTAssertEqual(viewModel.buttonTitle, "Stop")
             XCTAssertNil(repositoryMock.savedParams)
         }
     }
@@ -92,10 +70,10 @@ class TimerPageViewModelTests: XCTestCase {
 
         stateManagerMock.timerStatusSubject.send(.finished(startDate: startDate, endDate: endDate))
 
-        XCTAssertEqual(timerStrings, ["MOCK"])
+        XCTAssertEqual(viewModel.timerText, "MOCK")
         XCTAssertEqual(timeFormatterMock.receivedStartDate, startDate)
         XCTAssertEqual(timeFormatterMock.receivedEndDate, endDate)
-        XCTAssertEqual(buttonTitle, "")
+        XCTAssertEqual(viewModel.buttonTitle, "")
         XCTAssertNil(repositoryMock.savedParams)
     }
 
