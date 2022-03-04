@@ -7,21 +7,32 @@
 
 import Foundation
 import CoreData
+import Combine
 
 protocol TimeEntryRepository {
+    var entriesPublisher: AnyPublisher<[TimeEntry], Never> { get }
+    var entries: [TimeEntry] { get }
+
     @discardableResult
     func addEntry(startDate: Date, endDate: Date, comment: String?) -> TimeEntry
 
     func removeEntry(_ timeEntry: TimeEntry)
-
-    func getEntries() -> [TimeEntry]
 }
 
 final class TimeEntryRepositoryImpl: TimeEntryRepository {
+    var entriesPublisher: AnyPublisher<[TimeEntry], Never> {
+        $entries.eraseToAnyPublisher()
+    }
+
+    @Published
+    private(set) var entries: [TimeEntry] = []
+
     private let managedObjectContext: NSManagedObjectContext
 
     init(managedObjectContext: NSManagedObjectContext) {
         self.managedObjectContext = managedObjectContext
+
+        reload()
     }
 
     @discardableResult
@@ -34,11 +45,8 @@ final class TimeEntryRepositoryImpl: TimeEntryRepository {
         storedEntry.endDate = endDate
         storedEntry.comment = comment
 
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print("Error saving context: \(error)")
-        }
+        saveContext()
+        reload()
 
         return TimeEntry(
             id: id,
@@ -64,17 +72,26 @@ final class TimeEntryRepositoryImpl: TimeEntryRepository {
                 print("Can't find time entry: \(timeEntry)")
             }
         }
+
+        saveContext()
+        reload()
     }
 
-    func getEntries() -> [TimeEntry] {
+    private func saveContext() {
+        do {
+            try managedObjectContext.save()
+        } catch {
+            print("Error saving context: \(error)")
+        }
+    }
+
+    private func reload() {
         let fetchRequest = StoredTimeEntry.fetchRequest()
         fetchRequest.sortDescriptors = [.init(keyPath: \StoredTimeEntry.startDate, ascending: false)]
 
-        var timeEntries: [TimeEntry] = []
-
         managedObjectContext.performAndWait {
             do {
-                timeEntries = try fetchRequest.execute().compactMap {
+                entries = try fetchRequest.execute().compactMap {
                     guard let id = $0.id, let startDate = $0.startDate, let endDate = $0.endDate else {
                         return nil
                     }
@@ -90,7 +107,5 @@ final class TimeEntryRepositoryImpl: TimeEntryRepository {
                 print("Can't fetch time entries with error: \(error)")
             }
         }
-
-        return timeEntries
     }
 }

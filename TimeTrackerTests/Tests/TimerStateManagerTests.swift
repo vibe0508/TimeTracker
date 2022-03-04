@@ -166,6 +166,7 @@ class TimerStateManagerTests: XCTestCase {
                 .compactMap { $0 }
                 .sink(receiveValue: {
                     XCTAssertEqual($0.comment, commentTwo)
+                    completionNotCalled.fulfill()
                     completionCalled.fulfill()
                 })
         )

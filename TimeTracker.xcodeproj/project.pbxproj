@@ -23,6 +23,10 @@
 		1100025A27D202B2002C942E /* TimerPageAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100025927D202B2002C942E /* TimerPageAssembly.swift */; };
 		1100025C27D20379002C942E /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100025B27D20379002C942E /* AppAssembly.swift */; };
 		1100025E27D203D4002C942E /* TimeEntriesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100025D27D203D4002C942E /* TimeEntriesAssembly.swift */; };
+		1100026727D21DFB002C942E /* TimeEntryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100026627D21DFB002C942E /* TimeEntryListViewModel.swift */; };
+		1100026927D21FBE002C942E /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100026827D21FBE002C942E /* DateFormatter.swift */; };
+		1100026B27D22774002C942E /* TimeEntryListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100026A27D22774002C942E /* TimeEntryListViewModelTests.swift */; };
+		1100026D27D22798002C942E /* DateFormatterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100026C27D22798002C942E /* DateFormatterMock.swift */; };
 		11777C0927CFCB3E00D33474 /* TimeTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C0827CFCB3E00D33474 /* TimeTrackerApp.swift */; };
 		11777C0B27CFCB3E00D33474 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C0A27CFCB3E00D33474 /* ContentView.swift */; };
 		11777C0D27CFCB3F00D33474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11777C0C27CFCB3F00D33474 /* Assets.xcassets */; };
@@ -63,6 +67,10 @@
 		1100025927D202B2002C942E /* TimerPageAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPageAssembly.swift; sourceTree = "<group>"; };
 		1100025B27D20379002C942E /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		1100025D27D203D4002C942E /* TimeEntriesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntriesAssembly.swift; sourceTree = "<group>"; };
+		1100026627D21DFB002C942E /* TimeEntryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryListViewModel.swift; sourceTree = "<group>"; };
+		1100026827D21FBE002C942E /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		1100026A27D22774002C942E /* TimeEntryListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryListViewModelTests.swift; sourceTree = "<group>"; };
+		1100026C27D22798002C942E /* DateFormatterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterMock.swift; sourceTree = "<group>"; };
 		11777C0527CFCB3E00D33474 /* TimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11777C0827CFCB3E00D33474 /* TimeTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerApp.swift; sourceTree = "<group>"; };
 		11777C0A27CFCB3E00D33474 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +120,7 @@
 				11777C3627D0122F00D33474 /* TimeEntryRepository.swift */,
 				11777C3F27D0C02B00D33474 /* TimerStateManager.swift */,
 				1100023C27D0E7CE002C942E /* TimeFormatter.swift */,
+				1100026827D21FBE002C942E /* DateFormatter.swift */,
 			);
 			path = "Business logic";
 			sourceTree = "<group>";
@@ -143,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				1100024B27D15E53002C942E /* TimerPageViewModel.swift */,
+				1100026627D21DFB002C942E /* TimeEntryListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -153,6 +163,7 @@
 				1100024F27D1E9BE002C942E /* TimeFormatterMock.swift */,
 				1100025127D1EA2D002C942E /* TimeEntryRepositoryMock.swift */,
 				1100025327D1EBDB002C942E /* TimerStateManagerMock.swift */,
+				1100026C27D22798002C942E /* DateFormatterMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -164,6 +175,7 @@
 				1100023E27D0EA58002C942E /* TimeFormatterTests.swift */,
 				1100023A27D0D322002C942E /* TimerStateManagerTests.swift */,
 				1100024D27D16F5F002C942E /* TimerPageViewModelTests.swift */,
+				1100026A27D22774002C942E /* TimeEntryListViewModelTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -323,6 +335,7 @@
 				11777C0B27CFCB3E00D33474 /* ContentView.swift in Sources */,
 				1100024C27D15E53002C942E /* TimerPageViewModel.swift in Sources */,
 				1100023D27D0E7CE002C942E /* TimeFormatter.swift in Sources */,
+				1100026927D21FBE002C942E /* DateFormatter.swift in Sources */,
 				1100024A27D156F5002C942E /* TimeEntryView.swift in Sources */,
 				1100025C27D20379002C942E /* AppAssembly.swift in Sources */,
 				11777C3E27D0BF3D00D33474 /* TimerStatus.swift in Sources */,
@@ -333,6 +346,7 @@
 				1100025827D20214002C942E /* BusinessLogicAssembly.swift in Sources */,
 				11777C3A27D012C900D33474 /* Model.xcdatamodeld in Sources */,
 				1100025E27D203D4002C942E /* TimeEntriesAssembly.swift in Sources */,
+				1100026727D21DFB002C942E /* TimeEntryListViewModel.swift in Sources */,
 				11777C0927CFCB3E00D33474 /* TimeTrackerApp.swift in Sources */,
 				1100024827D153BE002C942E /* TimeEntriesListView.swift in Sources */,
 				11777C3527D011C800D33474 /* TimeEntry.swift in Sources */,
@@ -344,11 +358,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1100026B27D22774002C942E /* TimeEntryListViewModelTests.swift in Sources */,
 				11777C3C27D0A73700D33474 /* TimeEntryRepositoryTests.swift in Sources */,
 				1100025027D1E9BE002C942E /* TimeFormatterMock.swift in Sources */,
 				1100025427D1EBDB002C942E /* TimerStateManagerMock.swift in Sources */,
 				1100024E27D16F5F002C942E /* TimerPageViewModelTests.swift in Sources */,
 				1100023F27D0EA58002C942E /* TimeFormatterTests.swift in Sources */,
+				1100026D27D22798002C942E /* DateFormatterMock.swift in Sources */,
 				1100023B27D0D322002C942E /* TimerStateManagerTests.swift in Sources */,
 				1100025227D1EA2D002C942E /* TimeEntryRepositoryMock.swift in Sources */,
 			);

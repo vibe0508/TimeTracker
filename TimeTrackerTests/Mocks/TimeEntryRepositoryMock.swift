@@ -6,12 +6,19 @@
 //
 
 import Foundation
+import Combine
 @testable import TimeTracker
 
 final class TimeEntryRepositoryMock: TimeEntryRepository {
     var savedParams: (Date, Date, String?)?
     var entryToRemove: TimeEntry?
-    var returnEntries: [TimeEntry] = []
+
+    @Published
+    var entries: [TimeEntry] = []
+
+    var entriesPublisher: AnyPublisher<[TimeEntry], Never> {
+        $entries.eraseToAnyPublisher()
+    }
 
     func addEntry(startDate: Date, endDate: Date, comment: String?) -> TimeEntry {
         savedParams = (startDate, endDate, comment)
@@ -20,9 +27,5 @@ final class TimeEntryRepositoryMock: TimeEntryRepository {
 
     func removeEntry(_ timeEntry: TimeEntry) {
         entryToRemove = timeEntry
-    }
-
-    func getEntries() -> [TimeEntry] {
-        returnEntries
     }
 }

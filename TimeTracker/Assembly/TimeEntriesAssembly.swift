@@ -17,4 +17,12 @@ final class TimeEntriesAssembly {
     func makeTimeEntriesListView() -> TimeEntriesListView {
         TimeEntriesListView()
     }
+
+    private func makeViewModel() -> TimeEntryListViewModel {
+        TimeEntryListViewModel(
+            repository: businessLogicAssembly.timeEntryRepository,
+            timeFormatter: businessLogicAssembly.makeTimeFormatter(),
+            dateFormatter: businessLogicAssembly.makeDateFormatter()
+        )
+    }
 }

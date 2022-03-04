@@ -29,7 +29,7 @@ class TimeEntryRepositoryTests: XCTestCase {
         let endDate = Date(timeIntervalSince1970: 1100)
 
         let createdEntity = repository.addEntry(startDate: startDate, endDate: endDate, comment: nil)
-        let fetchedEntity = repository.getEntries().first
+        let fetchedEntity = repository.entries.first
 
         XCTAssertEqual(startDate, createdEntity.startDate)
         XCTAssertEqual(endDate, createdEntity.endDate)
@@ -53,7 +53,7 @@ class TimeEntryRepositoryTests: XCTestCase {
 
         repository.removeEntry(firstEntry)
 
-        let remainingEntries = repository.getEntries()
+        let remainingEntries = repository.entries
 
         XCTAssertEqual(remainingEntries.count, 1)
         XCTAssertNotEqual(remainingEntries.first?.id, firstEntry.id)
@@ -71,7 +71,9 @@ class TimeEntryRepositoryTests: XCTestCase {
             repository.addEntry(startDate: $0, endDate: $1, comment: $2)
         }
 
-        let fetchedEntries = repository.getEntries()
+        repository = TimeEntryRepositoryImpl(managedObjectContext: managedObjectContext)
+
+        let fetchedEntries = repository.entries
 
         XCTAssertEqual(createdEntries, fetchedEntries)
     }

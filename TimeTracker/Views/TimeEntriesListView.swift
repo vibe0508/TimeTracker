@@ -26,7 +26,7 @@ struct TimeEntriesListView: View {
 }
 
 extension TimeEntriesListView {
-    struct Entry: Identifiable {
+    struct Entry: Identifiable, Equatable {
         typealias ID = UUID
 
         let id: UUID

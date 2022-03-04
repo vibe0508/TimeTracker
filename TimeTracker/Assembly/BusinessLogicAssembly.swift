@@ -25,4 +25,8 @@ final class BusinessLogicAssembly {
     func makeTimerStateManager() -> TimerStateManager {
         TimerStateManagerImpl()
     }
+
+    func makeDateFormatter() -> DateFormatter {
+        DateFormatterImpl()
+    }
 }
