@@ -147,6 +147,27 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		1100026127D20615002C942E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				1100024F27D1E9BE002C942E /* TimeFormatterMock.swift */,
+				1100025127D1EA2D002C942E /* TimeEntryRepositoryMock.swift */,
+				1100025327D1EBDB002C942E /* TimerStateManagerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		1100026227D2061C002C942E /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				11777C3B27D0A73700D33474 /* TimeEntryRepositoryTests.swift */,
+				1100023E27D0EA58002C942E /* TimeFormatterTests.swift */,
+				1100023A27D0D322002C942E /* TimerStateManagerTests.swift */,
+				1100024D27D16F5F002C942E /* TimerPageViewModelTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		11777BFC27CFCB3E00D33474 = {
 			isa = PBXGroup;
 			children = (
@@ -192,13 +213,8 @@
 		11777C1827CFCB4000D33474 /* TimeTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				11777C3B27D0A73700D33474 /* TimeEntryRepositoryTests.swift */,
-				1100023E27D0EA58002C942E /* TimeFormatterTests.swift */,
-				1100023A27D0D322002C942E /* TimerStateManagerTests.swift */,
-				1100024D27D16F5F002C942E /* TimerPageViewModelTests.swift */,
-				1100024F27D1E9BE002C942E /* TimeFormatterMock.swift */,
-				1100025127D1EA2D002C942E /* TimeEntryRepositoryMock.swift */,
-				1100025327D1EBDB002C942E /* TimerStateManagerMock.swift */,
+				1100026227D2061C002C942E /* Tests */,
+				1100026127D20615002C942E /* Mocks */,
 			);
 			path = TimeTrackerTests;
 			sourceTree = "<group>";
