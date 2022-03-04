@@ -27,6 +27,7 @@
 		1100026927D21FBE002C942E /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100026827D21FBE002C942E /* DateFormatter.swift */; };
 		1100026B27D22774002C942E /* TimeEntryListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100026A27D22774002C942E /* TimeEntryListViewModelTests.swift */; };
 		1100026D27D22798002C942E /* DateFormatterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100026C27D22798002C942E /* DateFormatterMock.swift */; };
+		1100026F27D22B09002C942E /* DateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1100026E27D22B09002C942E /* DateFormatterTests.swift */; };
 		11777C0927CFCB3E00D33474 /* TimeTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C0827CFCB3E00D33474 /* TimeTrackerApp.swift */; };
 		11777C0B27CFCB3E00D33474 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11777C0A27CFCB3E00D33474 /* ContentView.swift */; };
 		11777C0D27CFCB3F00D33474 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11777C0C27CFCB3F00D33474 /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		1100026827D21FBE002C942E /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		1100026A27D22774002C942E /* TimeEntryListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEntryListViewModelTests.swift; sourceTree = "<group>"; };
 		1100026C27D22798002C942E /* DateFormatterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterMock.swift; sourceTree = "<group>"; };
+		1100026E27D22B09002C942E /* DateFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterTests.swift; sourceTree = "<group>"; };
 		11777C0527CFCB3E00D33474 /* TimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11777C0827CFCB3E00D33474 /* TimeTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTrackerApp.swift; sourceTree = "<group>"; };
 		11777C0A27CFCB3E00D33474 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				1100023A27D0D322002C942E /* TimerStateManagerTests.swift */,
 				1100024D27D16F5F002C942E /* TimerPageViewModelTests.swift */,
 				1100026A27D22774002C942E /* TimeEntryListViewModelTests.swift */,
+				1100026E27D22B09002C942E /* DateFormatterTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 			files = (
 				1100026B27D22774002C942E /* TimeEntryListViewModelTests.swift in Sources */,
 				11777C3C27D0A73700D33474 /* TimeEntryRepositoryTests.swift in Sources */,
+				1100026F27D22B09002C942E /* DateFormatterTests.swift in Sources */,
 				1100025027D1E9BE002C942E /* TimeFormatterMock.swift in Sources */,
 				1100025427D1EBDB002C942E /* TimerStateManagerMock.swift in Sources */,
 				1100024E27D16F5F002C942E /* TimerPageViewModelTests.swift in Sources */,

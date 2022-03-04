@@ -12,7 +12,21 @@ protocol DateFormatter {
 }
 
 final class DateFormatterImpl: DateFormatter {
+    private let todayFormatter: Foundation.DateFormatter = {
+        let formatter = Foundation.DateFormatter()
+        formatter.dateFormat = "H:mm"
+        return formatter
+    }()
+
+    private let regularFormatter: Foundation.DateFormatter = {
+        let formatter = Foundation.DateFormatter()
+        formatter.dateFormat = "d MMM"
+        return formatter
+    }()
+
     func string(from date: Date) -> String {
-        "BUM!"
+        Calendar.current.isDateInToday(date)
+        ? todayFormatter.string(from: date)
+        : regularFormatter.string(from: date)
     }
 }
