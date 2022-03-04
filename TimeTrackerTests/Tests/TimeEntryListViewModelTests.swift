@@ -60,4 +60,26 @@ class TimeEntryListViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.entries, expectedEntries)
         XCTAssertEqual(dateFormatterMock.lastDate, date2)
     }
+
+    func testDelete() {
+        repositoryMock.entries = [
+            TimeEntry(
+                id: UUID(),
+                startDate: Date(),
+                endDate: Date(timeIntervalSinceNow: 200),
+                comment: nil
+            ),
+
+            TimeEntry(
+                id: UUID(),
+                startDate: Date(timeIntervalSinceNow: 300),
+                endDate: Date(timeIntervalSinceNow: 400),
+                comment: nil
+            )
+        ]
+
+        viewModel.delete(at: [1])
+
+        XCTAssertEqual(repositoryMock.entryToRemove, repositoryMock.entries.last)
+    }
 }

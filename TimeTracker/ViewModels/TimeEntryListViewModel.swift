@@ -24,6 +24,16 @@ final class TimeEntryListViewModel: ObservableObject {
         setupBindings()
     }
 
+    func delete(at indexes: IndexSet) {
+        let deletedEntries = repository.entries
+            .enumerated()
+            .compactMap { indexes.contains($0) ? $1 : nil }
+
+        deletedEntries.forEach {
+            repository.removeEntry($0)
+        }
+    }
+
     private func setupBindings() {
         repository.entriesPublisher
             .map { [timeFormatter, dateFormatter] in

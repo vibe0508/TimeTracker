@@ -12,12 +12,17 @@ struct TimeEntriesListView: View {
     var viewModel: TimeEntryListViewModel
 
     var body: some View {
-        List(viewModel.entries) {
-            TimeEntryView(
-                date: $0.date,
-                duration: $0.duration,
-                comment: $0.comment
-            )
+        List {
+            ForEach(viewModel.entries) {
+                TimeEntryView(
+                    date: $0.date,
+                    duration: $0.duration,
+                    comment: $0.comment
+                )
+            }
+            .onDelete { [viewModel] indexSet in
+                viewModel.delete(at: indexSet)
+            }
         }
         .listStyle(.plain)
     }
